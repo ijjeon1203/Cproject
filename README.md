@@ -29,7 +29,8 @@ Display
 Function
 
 # Data
-
+Money
+- 10,50,100,500
 
 
 ## 사용자 모드
