@@ -3,20 +3,20 @@
 
 int main()
 {
-	int num;
+	int choice;
 	while (1)
 	{
 		system("cls");
-
+		showmenu();
 		puts("무엇을 하시겠습니까?");
-		scanf("%d", &num);
+		scanf("%d", &choice);
 		
-		switch (num)
+		switch (choice)
 		{
 
 		}
 
-		if (num == 5)
+		if (choice == 5)
 		{
 			printf("감사합니다.\n안녕히 가십시오.\n");
 			break;

@@ -8,6 +8,6 @@ typedef struct moneydata
 	int fhund;
 }moneydata;
 
-
+int totalmoney;
 
 #endif
