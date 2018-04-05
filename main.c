@@ -13,6 +13,13 @@ int main()
 		
 		switch (choice)
 		{
+		case 1:
+			cashput();
+			break;
+		case 2:
+			refund();
+			break;
+
 
 		}
 
