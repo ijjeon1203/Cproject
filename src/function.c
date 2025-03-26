@@ -11,10 +11,10 @@ moneydata money;
 void cashput()
 {
 	int won, count;
-	printf("¾ó¸¶Â¥¸® µ¿ÀüÀ» ³ÖÀ¸½Ã°Ú½À´Ï±î?\n");
-	printf("1.10¿ø 2. 50¿ø 3.100¿ø 4. 500¿ø\n");
+	printf("ì–¼ë§ˆì§œë¦¬ ë™ì „ì„ ë„£ìœ¼ì‹œê² ìŠµë‹ˆê¹Œ?\n");
+	printf("1.10ì› 2. 50ì› 3.100ì› 4. 500ì›\n");
 	scanf("%d", &won);
-	printf("¸î°³¸¦³ÖÀ¸½Ã°Ú½À´Ï±î?");
+	printf("ëª‡ê°œë¥¼ë„£ìœ¼ì‹œê² ìŠµë‹ˆê¹Œ?");
 	+
 		scanf("%d", &count);
 
@@ -42,14 +42,5 @@ void cashput()
 	{
 		printf("bye\n");
 	}
-	getchar();
-}
-
-void refund()
-{
-	printf("¹İÈ¯\n");
-	printf("°Å½º¸§µ·Àº %d¿øÀÔ´Ï´Ù.\n", totalmoney);
-	totalmoney = 0;
-	getchar();
 	getchar();
 }

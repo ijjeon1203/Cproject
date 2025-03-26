@@ -20,3 +20,10 @@ for folder in A B C; do
 done
 
 echo "✅ 모든 TODO 내용을 ${OUTPUT_FILE}에 정리 완료!"
+
+추가
+- 입력,선택해서 합치기 
+- # 기준으로 나누기 
+
+
+

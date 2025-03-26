@@ -8,7 +8,7 @@ int main()
 	{
 		system("cls");
 		showmenu();
-		puts("무엇을 하시겠습니까?");
+		choiceDisplay()
 		scanf("%d", &choice);
 		
 		switch (choice)
@@ -25,7 +25,6 @@ int main()
 
 		if (choice == 5)
 		{
-			printf("감사합니다.\n안녕히 가십시오.\n");
 			break;
 		}
 	}
