@@ -1,0 +1,26 @@
+FROM ubuntu:18.04
+
+# 비상호작용 설치 모드
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt update && apt install -y locales \
+    && locale-gen en_US.UTF-8 \
+    && update-locale LANG=en_US.UTF-8 \
+	apt get install git \
+	# X11 및 필수 패키지 설치
+    && apt install -y sudo wget software-properties-common
+	
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
+
+# 로케일 설정 (경고 방지용)
+#RUN locale-gen en_US.UTF-8
+#ENV LANG=en_US.UTF-8
+#ENV LANGUAGE=en_US:en
+#ENV LC_ALL=en_US.UTF-8
+
+# 기본 실행 명령
+CMD ["/usr/bin/code"]
+
+

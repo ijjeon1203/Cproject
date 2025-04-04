@@ -5,23 +5,10 @@
 extern int totalmoney;
 extern moneydata money;
 
-void menuDisplay()
-{
-	printf("-------------------------------------------\n");
-	printf("ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½\n");
-	printf("-------------------------------------------\n");
-	printf("ï¿½ï¿½ï¿½ï¿½İ¾ï¿½ %d\n", totalmoney);
-	printf("-------------------------------------------\n");
-	printf("1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½\n");
-	printf("2. ï¿½Å½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¯\n");
-	printf("5. ï¿½ï¿½ï¿½ï¿½\n");
-	printf("-------------------------------------------\n");
-}
-
 void refundDisplay()
 {
-	printf("ë°˜í™˜\n");
-	printf("ê±°ìŠ¤ë¦„ëˆì€ %dì›ì…ë‹ˆë‹¤.\n", totalmoney);
+	printf("¹İÈ¯\n");
+	printf("°Å½º¸§µ·Àº %d¿øÀÔ´Ï´Ù.\n", totalmoney);
 	totalmoney = 0;
 	getchar();
 	getchar();
@@ -29,10 +16,10 @@ void refundDisplay()
 
 void choiceDisplay()
 {
-	puts("ë¬´ì—‡ì„ í•˜ì‹œê² ìŠµë‹ˆê¹Œ?");
+	puts("¹«¾ùÀ» ÇÏ½Ã°Ú½À´Ï±î?");
 }
 
 void endDisplay()
 {
-	printf("ê°ì‚¬í•©ë‹ˆë‹¤.\nì•ˆë…•íˆ ê°€ì‹­ì‹œì˜¤.\n");
+	printf("°¨»çÇÕ´Ï´Ù.\n¾È³çÈ÷ °¡½Ê½Ã¿À.\n");
 }
