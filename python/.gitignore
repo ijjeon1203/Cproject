@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# PyCharm
+.idea/
+
+# Virtual Environments
+venv/
+.venv/
+
+# macOS
+.DS_Store
+
+# Logs and temporary
+*.log
+*.swp
+*.bak
+*.tmp
+
