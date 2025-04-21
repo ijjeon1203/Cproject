@@ -1,29 +1,27 @@
 cmake_minimum_required(VERSION 3.10)
 
 project(
-	Cproject 
-	LANGUAGES C
+	cppProject 
+	LANGUAGES CXX
 	VERSION 1.0
 )
 
 file(GLOB_RECURSE SOURCES "src/*.cpp" "src/*.h" )
 
 # C++ 표준 설정
-# set(CMAKE_CXX_STANDARD 17)
-# set(CMAKE_CXX_STANDARD_REQUIRED True)
-
-set(CMAKE_GENERATOR_TOOLSET v142)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 
-# 설정값
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Cproject)
+
+# Visual Studio 빌드 시 도구 집합 설정 (Windows일 경우)
+set(CMAKE_GENERATOR_TOOLSET v142 CACHE STRING "")
+
+
+# 시작 프로젝트 설정 (Visual Studio 한정)
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT cppProject)
 
 # 실행파일 추가 
-add_executable(Cproject ${SOURCES} ${RESOURCE_FILES} ${GENERATED_SETTINGS})
-
-
-
-# CSharp
-# set_property(TARGET RedEyeIE PROPERTY VS_DOTNET_TARGET_FRAMEWORK_VERSION "v4.7.2")
-
+add_executable(cppProject ${SOURCES} ${RESOURCE_FILES} ${GENERATED_SETTINGS})

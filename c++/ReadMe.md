@@ -1,93 +1,66 @@
-================================================================================
-    MICROSOFT FOUNDATION CLASS LIBRARY : SerialPortMon Project Overview
-===============================================================================
+# how to use 
 
-The application wizard has created this SerialPortMon application for
-you.  This application not only demonstrates the basics of using the Microsoft
-Foundation Classes but is also a starting point for writing your application.
-
-This file contains a summary of what you will find in each of the files that
-make up your SerialPortMon application.
-
-SerialPortMon.vcproj
-    This is the main project file for VC++ projects generated using an application wizard.
-    It contains information about the version of Visual C++ that generated the file, and
-    information about the platforms, configurations, and project features selected with the
-    application wizard.
-
-SerialPortMon.h
-    This is the main header file for the application.  It includes other
-    project specific headers (including Resource.h) and declares the
-    CSerialPortMonApp application class.
-
-SerialPortMon.cpp
-    This is the main application source file that contains the application
-    class CSerialPortMonApp.
-
-SerialPortMon.rc
-    This is a listing of all of the Microsoft Windows resources that the
-    program uses.  It includes the icons, bitmaps, and cursors that are stored
-    in the RES subdirectory.  This file can be directly edited in Microsoft
-    Visual C++. Your project resources are in 1033.
-
-res\SerialPortMon.ico
-    This is an icon file, which is used as the application's icon.  This
-    icon is included by the main resource file SerialPortMon.rc.
-
-res\SerialPortMon.rc2
-    This file contains resources that are not edited by Microsoft
-    Visual C++. You should place all resources not editable by
-    the resource editor in this file.
+cmake -B build -G "Visual Studio 16 2019"
 
 
-/////////////////////////////////////////////////////////////////////////////
-
-The application wizard creates one dialog class:
-
-SerialPortMonDlg.h, SerialPortMonDlg.cpp - the dialog
-    These files contain your CSerialPortMonDlg class.  This class defines
-    the behavior of your application's main dialog.  The dialog's template is
-    in SerialPortMon.rc, which can be edited in Microsoft Visual C++.
+cmake -B build -G "Visual Studio 17 2022"
+- v143 툴셋 이슈 
 
 
-/////////////////////////////////////////////////////////////////////////////
 
-Other Features:
+# CMake 빌드 명령어 (Visual Studio 2019용)
 
-ActiveX Controls
-    The application includes support to use ActiveX controls.
+```bash
+cmake -B build -G "Visual Studio 16 2019"
+```
 
-/////////////////////////////////////////////////////////////////////////////
+| 옵션 | 의미 |
+|------|------|
+| `-B build` | CMake 빌드 디렉터리를 `build`로 지정 (out-of-source build 권장) |
+| `-G "Visual Studio 16 2019"` | Visual Studio 2019를 빌드 시스템으로 사용 |
 
-Other standard files:
+---
 
-StdAfx.h, StdAfx.cpp
-    These files are used to build a precompiled header (PCH) file
-    named SerialPortMon.pch and a precompiled types file named StdAfx.obj.
+## 🧩 옵션 추가 예시
 
-Resource.h
-    This is the standard header file, which defines new resource IDs.
-    Microsoft Visual C++ reads and updates this file.
+### 1. **툴셋 버전 지정 (v142 등)**  
+```bash
+cmake -B build -G "Visual Studio 16 2019" -T v142
+```
 
-SerialPortMon.manifest
-	Application manifest files are used by Windows XP to describe an applications
-	dependency on specific versions of Side-by-Side assemblies. The loader uses this
-	information to load the appropriate assembly from the assembly cache or private
-	from the application. The Application manifest  maybe included for redistribution
-	as an external .manifest file that is installed in the same folder as the application
-	executable or it may be included in the executable in the form of a resource.
-/////////////////////////////////////////////////////////////////////////////
+### 2. **64비트 플랫폼 설정**
+Visual Studio 기본 플랫폼은 Win32이므로 64비트로 하고 싶다면:
 
-Other notes:
+```bash
+cmake -B build -G "Visual Studio 16 2019" -A x64
+```
 
-The application wizard uses "TODO:" to indicate parts of the source code you
-should add to or customize.
+---
 
-If your application uses MFC in a shared DLL, you will need
-to redistribute the MFC DLLs. If your application is in a language
-other than the operating system's locale, you will also have to
-redistribute the corresponding localized resources MFC90XXX.DLL.
-For more information on both of these topics, please see the section on
-redistributing Visual C++ applications in MSDN documentation.
+## 🛠 이후 빌드 방법
 
-/////////////////////////////////////////////////////////////////////////////
+```bash
+cmake --build build --config Release
+```
+또는
+
+```bash
+cmake --build build --config Debug
+```
+
+※ Visual Studio 솔루션 파일 (`.sln`)은 `build` 디렉터리에 생성됩니다.
+
+---
+
+## 💡 팁: VS에서 열기
+
+```bash
+start build/YourProject.sln
+```
+
+또는 그냥 `build` 폴더 들어가서 수동으로 `.sln` 더블클릭해도 됩니다.
+
+---
+
+필요하시면 VS Code에서 디버깅까지 연동하는 `CMakePresets.json` 예제도 드릴 수 있어요.  
+추가로 궁금한 설정 있으신가요? 😄
