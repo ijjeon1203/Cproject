@@ -1,0 +1,31 @@
+version: '3'
+services:
+  redmine:
+    image: redmine:5.1
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      REDMINE_DB_MYSQL: db
+      REDMINE_DB_PASSWORD: password
+      REDMINE_LANG: ko
+      REDMINE_SECRET_KEY_BASE: "my_super_secret_key"   # ✅ 이 줄 추가
+    depends_on:
+      - db
+    volumes:
+      - redmine_data:/usr/src/redmine/files
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: redmine
+      MYSQL_USER: redmine
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  redmine_data:
+  mysql_data:
