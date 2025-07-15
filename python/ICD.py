@@ -84,9 +84,9 @@ class ICD_GNT(ICD_MSG): #91
                      
         self.size = len(self.recv)
 
-    class ICD_FMS(ICD_MSG):  # 81
-        def __init__(self, _id: int) -> None:
-            super().__init__()
-            self.recv = (bytes([0xE1]) + (_id).to_bytes(1) + bytes([0x02, 0x00, 0x00, 0x00, 0x00, 0x00]))
-            self.send = ((_id).to_bytes(1) + bytes([0xE1, 0x02, 0x00, 0x02, 0x00, 0x00, 0x00, 0xF8, 0xFF]))
-            self.size = len(self.recv)
+class ICD_FMS(ICD_MSG):  # 81
+    def __init__(self, _id: int) -> None:
+        super().__init__()
+        self.recv = (bytes([0xE1]) + (_id).to_bytes(1) + bytes([0x02, 0x00, 0x00, 0x00, 0x00, 0x00]))
+        self.send = ((_id).to_bytes(1) + bytes([0xE1, 0x02, 0x00, 0x02, 0x00, 0x00, 0x00, 0xF8, 0xFF]))
+        self.size = len(self.recv)
