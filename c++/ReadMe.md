@@ -64,3 +64,12 @@ start build/YourProject.sln
 
 필요하시면 VS Code에서 디버깅까지 연동하는 `CMakePresets.json` 예제도 드릴 수 있어요.  
 추가로 궁금한 설정 있으신가요? 😄
+
+
+---
+코드	의미	설명
+TB	Top → Bottom	위에서 아래로 (기본값, 세로 방향)
+TD	Top → Down	TB와 동일 (세로)
+BT	Bottom → Top	아래에서 위로
+LR	Left → Right	왼쪽에서 오른쪽 (가로 방향)
+RL	Right → Left	오른쪽에서 왼쪽
